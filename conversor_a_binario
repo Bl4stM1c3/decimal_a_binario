@@ -1,0 +1,18 @@
+#EJERCICIO 9 DE https://retosdeprogramacion.com/ejercicios/
+#Crea un programa se encargue de transformar un número
+#decimal a binario sin utilizar funciones propias del lenguaje que lo hagan directamente.
+
+#Declaracion de variables
+numero_decimal = int(input("Introduzca un número entero: "))
+lista_restos = []
+
+#Condiciones
+if numero_decimal == 0:
+  print(numero_decimal)
+else:
+  while numero_decimal > 0:
+    resto = numero_decimal % 2
+    numero_decimal = numero_decimal // 2
+    lista_restos.insert(0, resto)  #introducimos los resultados de los modulos en sentido contrario
+  numero_binario = int(''.join([str(num) for num in lista_restos]))
+  print(numero_binario)
